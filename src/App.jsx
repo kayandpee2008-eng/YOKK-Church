@@ -40,7 +40,7 @@ export default function App() {
             </div>
 
             {/* Desktop Links - Spacing Fixed Here */}
-            <div className="hidden md:flex space-x-8 items-center">
+            <div className="hidden md:flex items-center" style={{ gap: '2rem' }}>
               {['home', 'about', 'ministries', 'sermons', 'contact'].map((tab) => (
                 <button
                   key={tab}
@@ -551,7 +551,7 @@ export default function App() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
                 <div className="space-y-6">
                   <p className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">EVERYONE HAS A PLACE</p>
-                  <h2 className="text-3xl font-serif font-bold text-white">SERVE WITH <span className="text-emerald-500">PURPOSE</span></h2>
+                  <h2 className="text-3xl font-serif font-serif font-bold text-white">SERVE WITH <span className="text-emerald-500">PURPOSE</span></h2>
                   <div className="w-16 h-1 bg-emerald-500"></div>
                   <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                     We believe that God has uniquely gifted every person to make an impact. Our ministry teams provide practical opportunities to put your gifts into action—from worship and hospitality to community outreach and youth mentorship.
