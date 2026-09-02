@@ -39,7 +39,7 @@ export default function App() {
               <span className="text-xl font-bold tracking-wider text-white">YOKK <span className="text-emerald-500">CHURCH</span></span>
             </div>
 
-            {/* Desktop Links */}
+            {/* Desktop Links - Spacing Fixed Here */}
             <div className="hidden md:flex space-x-8 items-center">
               {['home', 'about', 'ministries', 'sermons', 'contact'].map((tab) => (
                 <button
