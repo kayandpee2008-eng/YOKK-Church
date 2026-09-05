@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Church, Menu, X, ArrowRight, ChevronDown, ChevronUp, Play, Calendar, Download, Share2 } from 'lucide-react';
 
-const heroWorship = `${import.meta.env.BASE_URL}img1.jpg`;
+const heroWorship = `/img1.jpg`;
 
 const sermonImages = [
-  { id: 1, src: `${import.meta.env.BASE_URL}sermons/sermons1.webp`, title: "One Degree", date: "August 23, 2026", description: "Circumstances may be true, but the story we tell ourselves about them can be a lie, and those lies can shape the course of our lives. Dr. Donna Pisani challenges us to identify the lies of the enemy, replace them with the settled truth of God's Word, and hold onto the hope found in what God has spoken." },
-  { id: 2, src: `${import.meta.env.BASE_URL}sermons/sermons2.webp`, title: "A Sure Future", date: "August 16, 2026", description: "Discover an inspiring message designed to uplift your faith and guide you through everyday life with complete assurance in God's plan." },
-  { id: 3, src: `${import.meta.env.BASE_URL}sermons/sermons3.webp`, title: "Questions in the Valley", date: "August 9, 2026", description: "Navigating difficult seasons often brings heavy questions. Learn how to anchor your heart in faith when walking through life's deepest valleys." },
-  { id: 4, src: `${import.meta.env.BASE_URL}sermons/sermons4.webp`, title: "The Lord Is My Shepherd", date: "August 2, 2026", description: "A powerful reminder of God's personal care, protection, and provision in every single season we encounter." },
-  { id: 5, src: `${import.meta.env.BASE_URL}sermons/sermons1.webp`, title: "A Holy Hunger", date: "July 26, 2026", description: "Awaken a fresh passion for God's presence and pursue a deeper, more meaningful spiritual life." },
-  { id: 6, src: `${import.meta.env.BASE_URL}sermons/sermons2.webp`, title: "Getting Ready for Victory", date: "July 19, 2026", description: "Prepare your mindset and spirit for the breakthroughs and victories God has prepared ahead of you." },
-  { id: 7, src: `${import.meta.env.BASE_URL}sermons/sermons3.webp`, title: "Food Bank Sunday", date: "July 12, 2026", description: "Reflecting on the heart of generosity, community care, and sharing God's love through practical action." },
-  { id: 8, src: `${import.meta.env.BASE_URL}sermons/sermons4.webp`, title: "Seek My Face", date: "July 5, 2026", description: "Turn away from distractions and lean entirely into seeking God's presence for revival in your life and community." },
-  { id: 9, src: `${import.meta.env.BASE_URL}sermons/sermons1.webp`, title: "Today, I Choose to Forgive", date: "June 28, 2026", description: "Experience the profound freedom and healing that comes when you choose to release offense and walk in forgiveness." },
-  { id: 10, src: `${import.meta.env.BASE_URL}sermons/sermons2.webp`, title: "After You", date: "June 21, 2026", description: "Exploring the biblical pattern of putting others first and modeling Christ-like humility in our relationships." },
-  { id: 11, src: `${import.meta.env.BASE_URL}sermons/sermons3.webp`, title: "Close the Door", date: "June 14, 2026", description: "Learn how to shut out negative influences and protect your spiritual boundaries to stay aligned with your destiny." },
+  { id: 1, src: `/sermons/sermons1.webp`, title: "One Degree", date: "August 23, 2026", description: "Circumstances may be true, but the story we tell ourselves about them can be a lie, and those lies can shape the course of our lives. Dr. Donna Pisani challenges us to identify the lies of the enemy, replace them with the settled truth of God's Word, and hold onto the hope found in what God has spoken." },
+  { id: 2, src: `/sermons/sermons2.webp`, title: "A Sure Future", date: "August 16, 2026", description: "Discover an inspiring message designed to uplift your faith and guide you through everyday life with complete assurance in God's plan." },
+  { id: 3, src: `/sermons/sermons3.webp`, title: "Questions in the Valley", date: "August 9, 2026", description: "Navigating difficult seasons often brings heavy questions. Learn how to anchor your heart in faith when walking through life's deepest valleys." },
+  { id: 4, src: `/sermons/sermons4.webp`, title: "The Lord Is My Shepherd", date: "August 2, 2026", description: "A powerful reminder of God's personal care, protection, and provision in every single season we encounter." },
+  { id: 5, src: `/sermons/sermons1.webp`, title: "A Holy Hunger", date: "July 26, 2026", description: "Awaken a fresh passion for God's presence and pursue a deeper, more meaningful spiritual life." },
+  { id: 6, src: `/sermons/sermons2.webp`, title: "Getting Ready for Victory", date: "July 19, 2026", description: "Prepare your mindset and spirit for the breakthroughs and victories God has prepared ahead of you." },
+  { id: 7, src: `/sermons/sermons3.webp`, title: "Food Bank Sunday", date: "July 12, 2026", description: "Reflecting on the heart of generosity, community care, and sharing God's love through practical action." },
+  { id: 8, src: `/sermons/sermons4.webp`, title: "Seek My Face", date: "July 5, 2026", description: "Turn away from distractions and lean entirely into seeking God's presence for revival in your life and community." },
+  { id: 9, src: `/sermons/sermons1.webp`, title: "Today, I Choose to Forgive", date: "June 28, 2026", description: "Experience the profound freedom and healing that comes when you choose to release offense and walk in forgiveness." },
+  { id: 10, src: `/sermons/sermons2.webp`, title: "After You", date: "June 21, 2026", description: "Exploring the biblical pattern of putting others first and modeling Christ-like humility in our relationships." },
+  { id: 11, src: `/sermons/sermons3.webp`, title: "Close the Door", date: "June 14, 2026", description: "Learn how to shut out negative influences and protect your spiritual boundaries to stay aligned with your destiny." },
 ];
 
 export default function App() {
@@ -39,7 +39,7 @@ export default function App() {
               <span className="text-xl font-bold tracking-wider text-white">YOKK <span className="text-emerald-500">CHURCH</span></span>
             </div>
 
-            {/* Desktop Links - Spacing Fixed Here */}
+            {/* Desktop Links */}
             <div className="hidden md:flex items-center" style={{ gap: '2rem' }}>
               {['home', 'about', 'ministries', 'sermons', 'contact'].map((tab) => (
                 <button
@@ -62,7 +62,7 @@ export default function App() {
 
             {/* Mobile Button */}
             <div className="md:hidden">
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-zinc-400 hover:text-white">
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-zinc-400 hover:text-white" aria-label="Toggle Mobile Menu">
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
@@ -72,13 +72,13 @@ export default function App() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-zinc-900 border-b border-zinc-800 px-4 pt-2 pb-4 space-y-2 shadow-lg">
-            {['home', 'about', 'ministries', 'sermons', 'contact'].map((tab) => (
+            {['home', 'about', 'ministries', 'sermons', 'prayer', 'contact'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => { setActiveTab(tab); setMobileMenuOpen(false); }}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-zinc-300 hover:bg-emerald-950 hover:text-emerald-400 capitalize"
               >
-                {tab}
+                {tab === 'prayer' ? 'Request a Prayer' : tab}
               </button>
             ))}
           </div>
@@ -120,7 +120,7 @@ export default function App() {
                   <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-emerald-600 transition">
                     <div>
                       <div className="h-56 overflow-hidden bg-zinc-950">
-                        <img src={`${import.meta.env.BASE_URL}img2.jpg`} alt="Young Adult Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
+                        <img src={`/img2.jpg`} alt="Young Adult Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
                       </div>
                       <div className="p-6 space-y-3">
                         <div className="text-xs uppercase tracking-wider text-emerald-400 font-bold">FRIDAYS AT 6:00 PM</div>
@@ -141,7 +141,7 @@ export default function App() {
                   <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-emerald-600 transition">
                     <div>
                       <div className="h-56 overflow-hidden bg-zinc-950">
-                        <img src={`${import.meta.env.BASE_URL}img3.jpg`} alt="Youth Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
+                        <img src={`/img3.jpg`} alt="Youth Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
                       </div>
                       <div className="p-6 space-y-3">
                         <div className="text-xs uppercase tracking-wider text-emerald-400 font-bold">SATURDAYS AT 4:00 PM</div>
@@ -162,7 +162,7 @@ export default function App() {
                   <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-emerald-600 transition">
                     <div>
                       <div className="h-56 overflow-hidden bg-zinc-950">
-                        <img src={`${import.meta.env.BASE_URL}img5.jpg`} alt="Women Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
+                        <img src={`/img5.jpg`} alt="Women Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
                       </div>
                       <div className="p-6 space-y-3">
                         <div className="text-xs uppercase tracking-wider text-emerald-400 font-bold">THURSDAYS AT 5:30 PM</div>
@@ -199,7 +199,7 @@ export default function App() {
                   </button>
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg h-80 border border-zinc-800 bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img4.jpg`} alt="Worship congregation" className="w-full h-full object-cover" />
+                  <img src={`/img4.jpg`} alt="Worship congregation" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -212,7 +212,7 @@ export default function App() {
             <section className="relative h-[65vh] min-h-[450px] flex items-center justify-center text-center overflow-hidden border-b border-zinc-800 mb-16">
               <div className="absolute inset-0 z-0">
                 <img 
-                  src={`${import.meta.env.BASE_URL}sermons/sermons1.webp`} 
+                  src={`/sermons/sermons1.webp`} 
                   alt="Preaching Background" 
                   className="w-full h-full object-cover object-center filter brightness-[0.4] contrast-110"
                 />
@@ -250,11 +250,11 @@ export default function App() {
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.src = `${import.meta.env.BASE_URL}sermons/sermons1.webp`;
+                          e.target.src = `/sermons/sermons1.webp`;
                         }}
                       />
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <button className="w-12 h-12 rounded-full bg-emerald-500 text-black flex items-center justify-center shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <button aria-label="Play Sermon Video" className="w-12 h-12 rounded-full bg-emerald-500 text-black flex items-center justify-center shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
                           <Play className="w-5 h-5 fill-current ml-0.5" />
                         </button>
                       </div>
@@ -301,7 +301,7 @@ export default function App() {
           <div className="bg-black text-zinc-100 space-y-24 pb-24">
             <div 
               className="relative bg-black py-36 sm:py-48 bg-cover bg-center text-center overflow-hidden border-b border-zinc-800"
-              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)), url(${import.meta.env.BASE_URL}img4.jpg)` }}
+              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)), url(/img4.jpg)` }}
             >
               <div className="max-w-4xl mx-auto px-4 space-y-4 relative z-10">
                 <p className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">ABOUT YOKK CHURCH</p>
@@ -317,7 +317,7 @@ export default function App() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 group bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img1.jpg`} alt="Mission & Vision" className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
+                  <img src={`/img1.jpg`} alt="Mission & Vision" className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col justify-end p-8">
                     <h3 className="text-2xl font-serif font-bold text-white mb-2">OUR MISSION & VISION</h3>
                     <p className="text-zinc-300 text-xs mb-4">Discover what drives our ministry forward daily.</p>
@@ -325,7 +325,7 @@ export default function App() {
                 </div>
 
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 group bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img2.jpg`} alt="Leadership Team" className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
+                  <img src={`/img2.jpg`} alt="Leadership Team" className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col justify-end p-8">
                     <h3 className="text-2xl font-serif font-bold text-white mb-2">LEADERSHIP TEAM</h3>
                     <p className="text-zinc-300 text-xs mb-4">Meet our pastors and dedicated leaders.</p>
@@ -333,7 +333,7 @@ export default function App() {
                 </div>
 
                 <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl border border-zinc-800 group bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img4.jpg`} alt="What We Believe" className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
+                  <img src={`/img4.jpg`} alt="What We Believe" className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-70" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col justify-end p-8">
                     <h3 className="text-2xl font-serif font-bold text-white mb-2">WHAT WE BELIEVE</h3>
                     <p className="text-zinc-300 text-xs mb-4">Explore our core biblical doctrines and faith.</p>
@@ -353,13 +353,13 @@ export default function App() {
                   </p>
                 </div>
                 <div className="rounded-2xl overflow-hidden h-72 border border-zinc-800 bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img3.jpg`} alt="Church community" className="w-full h-full object-cover" />
+                  <img src={`/img3.jpg`} alt="Church community" className="w-full h-full object-cover" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
                 <div className="order-2 lg:order-1 rounded-2xl overflow-hidden h-72 border border-zinc-800 bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img5.jpg`} alt="Church vision" className="w-full h-full object-cover" />
+                  <img src={`/img5.jpg`} alt="Church vision" className="w-full h-full object-cover" />
                 </div>
                 <div className="order-1 lg:order-2 space-y-6">
                   <p className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">COMMUNITY</p>
@@ -382,7 +382,7 @@ export default function App() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 text-center space-y-4 shadow-xl">
                   <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-emerald-500 bg-zinc-950">
-                    <img src={`${import.meta.env.BASE_URL}img2.jpg`} alt="Pastor" className="w-full h-full object-cover" />
+                    <img src={`/img2.jpg`} alt="Pastor" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Rev. & Mrs.</h3>
@@ -395,7 +395,7 @@ export default function App() {
 
                 <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 text-center space-y-4 shadow-xl">
                   <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-emerald-500 bg-zinc-950">
-                    <img src={`${import.meta.env.BASE_URL}img3.jpg`} alt="Associate Pastor" className="w-full h-full object-cover" />
+                    <img src={`/img3.jpg`} alt="Associate Pastor" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Leadership Team</h3>
@@ -408,7 +408,7 @@ export default function App() {
 
                 <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 text-center space-y-4 shadow-xl">
                   <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-2 border-emerald-500 bg-zinc-950">
-                    <img src={`${import.meta.env.BASE_URL}img5.jpg`} alt="Director" className="w-full h-full object-cover" />
+                    <img src={`/img5.jpg`} alt="Director" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Ministry Directors</h3>
@@ -461,7 +461,7 @@ export default function App() {
           <div className="bg-black text-zinc-100 space-y-24 pb-24">
             <div 
               className="relative bg-black py-36 sm:py-48 bg-cover bg-center text-center overflow-hidden border-b border-zinc-800"
-              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.95)), url(${import.meta.env.BASE_URL}img3.jpg)` }}
+              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.95)), url(/img3.jpg)` }}
             >
               <div className="max-w-4xl mx-auto px-4 space-y-4 relative z-10">
                 <p className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">CONNECT & GROW</p>
@@ -485,7 +485,7 @@ export default function App() {
                 <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-emerald-600 transition">
                   <div>
                     <div className="h-56 overflow-hidden bg-zinc-950">
-                      <img src={`${import.meta.env.BASE_URL}img3.jpg`} alt="Youth Ministry" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
+                      <img src={`/img3.jpg`} alt="Youth Ministry" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
                     </div>
                     <div className="p-6 space-y-3">
                       <div className="text-xs uppercase tracking-wider text-emerald-400 font-bold">SATURDAYS AT 4:00 PM</div>
@@ -506,7 +506,7 @@ export default function App() {
                 <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-emerald-600 transition">
                   <div>
                     <div className="h-56 overflow-hidden bg-zinc-950">
-                      <img src={`${import.meta.env.BASE_URL}img2.jpg`} alt="Young Adult Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
+                      <img src={`/img2.jpg`} alt="Young Adult Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
                     </div>
                     <div className="p-6 space-y-3">
                       <div className="text-xs uppercase tracking-wider text-emerald-400 font-bold">FRIDAYS AT 6:00 PM</div>
@@ -527,7 +527,7 @@ export default function App() {
                 <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-emerald-600 transition">
                   <div>
                     <div className="h-56 overflow-hidden bg-zinc-950">
-                      <img src={`${import.meta.env.BASE_URL}img5.jpg`} alt="Women Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
+                      <img src={`/img5.jpg`} alt="Women Group" className="w-full h-full object-cover hover:scale-105 transition duration-500 opacity-90" />
                     </div>
                     <div className="p-6 space-y-3">
                       <div className="text-xs uppercase tracking-wider text-emerald-400 font-bold">THURSDAYS AT 5:30 PM</div>
@@ -551,7 +551,7 @@ export default function App() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
                 <div className="space-y-6">
                   <p className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">EVERYONE HAS A PLACE</p>
-                  <h2 className="text-3xl font-serif font-serif font-bold text-white">SERVE WITH <span className="text-emerald-500">PURPOSE</span></h2>
+                  <h2 className="text-3xl font-serif font-bold text-white">SERVE WITH <span className="text-emerald-500">PURPOSE</span></h2>
                   <div className="w-16 h-1 bg-emerald-500"></div>
                   <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                     We believe that God has uniquely gifted every person to make an impact. Our ministry teams provide practical opportunities to put your gifts into action—from worship and hospitality to community outreach and youth mentorship.
@@ -564,7 +564,7 @@ export default function App() {
                   </button>
                 </div>
                 <div className="rounded-2xl overflow-hidden h-72 border border-zinc-800 bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img1.jpg`} alt="Serving together" className="w-full h-full object-cover" />
+                  <img src={`/img1.jpg`} alt="Serving together" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -576,7 +576,7 @@ export default function App() {
           <div className="bg-black text-zinc-100 min-h-screen pb-24">
             <div 
               className="relative bg-black py-36 sm:py-48 bg-cover bg-center text-center overflow-hidden border-b border-zinc-800 mb-16"
-              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)), url(${import.meta.env.BASE_URL}img2.jpg)` }}
+              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)), url(/img2.jpg)` }}
             >
               <div className="max-w-4xl mx-auto px-4 space-y-4 relative z-10">
                 <p className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">WE ARE HERE FOR YOU</p>
@@ -620,7 +620,7 @@ export default function App() {
           <div className="bg-black text-zinc-100 min-h-screen pb-24">
             <div 
               className="relative bg-black py-36 sm:py-48 bg-cover bg-center text-center overflow-hidden border-b border-zinc-800 mb-16"
-              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)), url(${import.meta.env.BASE_URL}img5.jpg)` }}
+              style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.92)), url(/img5.jpg)` }}
             >
               <div className="max-w-4xl mx-auto px-4 space-y-4 relative z-10">
                 <p className="text-xs uppercase tracking-widest text-emerald-400 font-semibold">GET IN TOUCH</p>
@@ -680,7 +680,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="rounded-2xl overflow-hidden h-64 border border-zinc-800 bg-zinc-950">
-                  <img src={`${import.meta.env.BASE_URL}img4.jpg`} alt="Church building" className="w-full h-full object-cover" />
+                  <img src={`/img4.jpg`} alt="Church building" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
